@@ -8,9 +8,6 @@ use App\Posts;
 class Blog extends Controller
 {
 
-    public function ja() {
-        echo "test";
-    }
     public function index() {
     	$Post = Posts::all();
     	$data = array(
@@ -25,15 +22,6 @@ class Blog extends Controller
     	);
     	return view('index_template', $data);
     }
-
-    public function register(){
-        $data = array(
-            'Menu0' => 'Home',
-            'href0' => 'blog',
-        );
-        return view('register_template',$data);
-    }
-
 
     private function register_user($username,$email,$password){
         Users::register_new($username,$email,$password);
