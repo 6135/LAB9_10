@@ -24,3 +24,11 @@ Route::get('/','Blog@index');
 */ 
 Route::get('/register','Register@index');
 Route::post('/register','Register@register_action');
+/*
+|--------------------------------------------------------------------------
+| Login Controller
+|--------------------------------------------------------------------------
+*/
+Route::get('/login','Login@index');
+Route::post('/login','Login@login_action');
+Route::get('/logout','Login@logout');

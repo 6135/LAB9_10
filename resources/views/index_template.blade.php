@@ -77,7 +77,7 @@
               <hr>
               <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up"></i> &nbsp;{{$post->num_likes}}</button>
               <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down"></i> &nbsp;Clear_Like</button>
-              @if ($post->user_id == -1)
+              @if (isset($id) && $post->user_id == $id)
               <a href="blog.php?PostId={{$post->id}}" role="button" class="btn btn-danger"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
               @endif
             </div>
