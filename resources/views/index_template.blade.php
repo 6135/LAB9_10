@@ -1,26 +1,10 @@
-<!DOCTYPE html>
+@extends('layouts.app') 
 
-<html lang="en">
+  @section('extra')
+    @include('layouts.newsFlash')
+  @endsection
 
-<head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{asset('resources/assets/css/indexStyle.css')}}">
-  <link rel="stylesheet" href="https://streamonion.com/kinnith/fontawesome/css/all.css"></link>
-  <title>Forum</title>
-</head>
-
-<body>
-  <!-- Header -->
-  @include('layouts.navbar')
-  <!-- EOHeader -->
-
-  <!-- Main Content -->
-  <!-- Quick -->
-  @include('layouts.newsFlash')
-  <!--EOQuick -->
-
-  <!-- Content -->
+  @section('content')
   <div class="row">
     <div class="row-padded">
       <!-- left row -->
@@ -60,7 +44,7 @@
           </div>
 
           <!-- own post -->
-          @if (Auth::user())
+          @if (isset($Name))
           <div class="panel panel-default">
             <div class="panel-footer">
               <a href="blog.php" role="button" class="btn btn-success" ><i class="fas fa-pencil-alt"></i>&nbsp;Post</a>
@@ -137,18 +121,4 @@
       </div>
     </div>
   </div>
-  <!--EOContent -->
-
-  <!-- EOContent -->
-
-  <!-- Footer -->
-  @include('layouts.footer')
-  <!--EOFooter -->
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+  @endsection
