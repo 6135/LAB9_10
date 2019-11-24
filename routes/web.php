@@ -10,8 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
+|--------------------------------------------------------------------------
+| Blog Controller
+|--------------------------------------------------------------------------
+*/
 Route::get('/','Blog@index');
 Route::get('/blog','Blog@index');
-Route::get('/register','Register@register');
 
+/*
+|--------------------------------------------------------------------------
+| Register Controller
+|--------------------------------------------------------------------------
+*/ 
+Route::get('/register','Register@index');
+Route::post('/register','Register@register_action');

@@ -10,10 +10,10 @@ class Posts extends Model
 	protected $primaryKey = 'id';
 
 	public static function selectByUser($id){
-		return Posts::select('content','id','user_id')->where('user_id',$id)->get();
+		return $this->select('content','id','user_id')->where('user_id',$id)->get();
 	}
 	public static function get_all(){
-		return Posts::all();
+		return $this->all();
 	}/**
 		get user that owns
 	*/
