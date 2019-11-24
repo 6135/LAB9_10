@@ -4,22 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRegisterNew;
-use App\Users;
+use App\Blog_model;
 class Register extends Controller
 {
     public function index(){
-        $data = array(
-            'Menu0' => 'Home',
-            'href0' => 'blog',
-            'Email' => '',
-            'Username' => ''
-        );
-        return view('register.register_template',$data);
+        return view('register.register_template');
     }
 
     public function register_action(StoreRegisterNew $request){
-    	Users::register_action($request->Username,$request->Email,$request->Password);
-    	return redirect('/message_template')
+    	Blog_model::register_user($request->Username,$request->Email,$request->Password);
+    	$data = array(
+    	'Type' => 'success',
+    	'Message' => 'Success: New user registered'
+    	);
+    	return view('/message_template',$data);
     }
 
 }

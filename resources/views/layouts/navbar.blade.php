@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand active" href="{{$href0}}"><i class="fas fa-bars" style="color: white"></i>&nbsp;{{$Menu0}}</a>
+      <a class="navbar-brand active" href="/LAB9_10"><i class="fas fa-bars" style="color: white"></i>&nbsp;Home</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       @if (isset($Menu1)) 

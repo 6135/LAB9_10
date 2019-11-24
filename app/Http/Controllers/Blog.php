@@ -4,27 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
-
+use App\Blog_model;
 class Blog extends Controller
 {
-
     public function index() {
-    	$Post = Posts::all();
+    	$Post = Blog_model::get_posts();
     	$data = array(
-    		'Menu0' => 'Home',
     	    'Menu1' => 'Login',
     	    'Menu2' => 'Register',
-    	    'href0' => 'blog',
-    	    'href1' => '',
-    	    'href2' => '',
+    	    'href1' => 'login',
+    	    'href2' => 'register',
     	    'SubForum' => 'Main',
     	    'Posts' => $Post
     	);
     	return view('index_template', $data);
     }
-
-    private function register_user($username,$email,$password){
-        Users::register_new($username,$email,$password);
-    }
-
 }
