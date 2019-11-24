@@ -2,11 +2,12 @@
 
   
   @section('content')
+
   <div class="container" style="max-width: 50%">
     <div class="well">
       <h2 class="text-center">Register</h2>
       <hr>
-
+      <!--
       <form class="form-horizontal" action="{{action('Blog@register_action')}}" method="POST">
         <div class="form-group">
           <label class="control-label col-sm-3" for="username">Username:</label>
@@ -40,7 +41,7 @@
           </div>        
         </div>
       </form>
-
+      -->
     </div>
     @if (isset($Error) && $isError == 1) 
     <div class="alert alert-danger">
