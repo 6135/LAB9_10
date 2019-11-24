@@ -6,7 +6,8 @@
 	# Use: RewriteBase /<subdirectory> if installed in
 	# subdirectory
 
-	RewriteBase /LAB9_10
+	RewriteBase /~a12345/LAB9_10
+
 	# Handle Front Controller...
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
