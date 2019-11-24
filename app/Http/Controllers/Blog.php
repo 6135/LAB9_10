@@ -7,7 +7,6 @@ use App\Posts_model;
 
 class Blog extends Controller
 {
-
     public function index() {
     	$Post = Posts_model::all();
     	$data = array(
