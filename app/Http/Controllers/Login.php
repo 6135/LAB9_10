@@ -32,7 +32,7 @@ class Login extends Controller
 
     public function login_action(StoreLogin $request){
         //
-    	$User = Blog_model::get_user($request->Email);
+    	//$User = Blog_model::get_user($request->Email);
     	$Password = substr(md5($request->Password), 0, 32);
 
     	if($Password != $User[0]->password_digest ){
