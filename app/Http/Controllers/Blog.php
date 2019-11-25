@@ -23,7 +23,7 @@ class Blog extends Controller
                 'Menu3' => 'Blog',
                 'href1' => '#',
                 'href2' => 'logout',
-                'href3' => 'post',
+                'href3' => action('Post@post',''),
                 'SubForum' => 'Main',
                 'Posts' => $Post,
                 'id' => session()->get('id'),
