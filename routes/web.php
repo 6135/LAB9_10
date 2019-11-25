@@ -42,4 +42,4 @@ Route::get('/post/{id}','Post@post');
 
 Route::post('/post_action','Post@post_action');
 Route::post('/post_action/{id}','Post@post_action');
-//Route::any('{all}','Blog@index');
+Route::any('{all}','Blog@index');
