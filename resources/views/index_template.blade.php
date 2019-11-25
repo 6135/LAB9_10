@@ -47,7 +47,7 @@
           @if (isset($Name))
           <div class="panel panel-default">
             <div class="panel-footer">
-              <a href="blog.php" role="button" class="btn btn-success" ><i class="fas fa-pencil-alt"></i>&nbsp;Post</a>
+              <a href="post" role="button" class="btn btn-success" ><i class="fas fa-pencil-alt"></i>&nbsp;Post</a>
             </div>
           </div>
           @endif
@@ -78,7 +78,7 @@
               <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up"></i> &nbsp;{{$post->num_likes}}</button>
               <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down"></i> &nbsp;Clear_Like</button>
               @if (isset($id) && $post->user_id == $id)
-              <a href="blog.php?PostId={{$post->id}}" role="button" class="btn btn-danger"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
+              <a href="{{action('Post@post',$post->id)}}" role="button" class="btn btn-danger"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
               @endif
             </div>
           </div>

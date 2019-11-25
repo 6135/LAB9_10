@@ -34,9 +34,11 @@ class Login extends Controller
         //
     	$User = Blog_model::get_user($request->Email);
     	$Password = substr(md5($request->Password), 0, 32);
+
     	if($Password != $User[0]->password_digest ){
     		return redirect('login')->withErrors('Login failed');
     	}
+        
     	session()->regenerate();
     	session(['Name' => $User[0]->name]);
     	session(['id' => $User[0]->id]);

@@ -32,3 +32,14 @@ Route::post('/register','Register@register_action');
 Route::get('/login','Login@index');
 Route::post('/login','Login@login_action');
 Route::get('/logout','Login@logout');
+/*
+|--------------------------------------------------------------------------
+| Post Controller
+|--------------------------------------------------------------------------
+*/
+Route::get('/post','Post@post');
+Route::get('/post/{id}','Post@post');
+
+Route::post('/post_action','Post@post_action');
+Route::post('/post_action/{id}','Post@post_action');
+//Route::any('{all}','Blog@index');

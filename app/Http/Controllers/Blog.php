@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cookie;
 class Blog extends Controller
 {
     public function index() {
+        $Post = Blog_model::get_posts();
         if(Cookie::has('rememberMe') == 1) {
             $User = blog_model::get_user_cookie(Cookie::get('rememberMe'));
             session(['Name' => $User->name]);
@@ -16,7 +17,6 @@ class Blog extends Controller
         } 
         if(session()->has('id')) {
             $Name = session()->get('Name');
-            $Post = Blog_model::get_posts();
             $data = array(
                 'Menu1' => 'Welcome '.$Name.'!',
                 'Menu2' => 'Logout',
@@ -29,7 +29,6 @@ class Blog extends Controller
             );
             return view('index_template', $data);            
         }        
-    	$Post = Blog_model::get_posts();
     	$data = array(
     	    'Menu1' => 'Login',
     	    'Menu2' => 'Register',

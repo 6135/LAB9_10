@@ -10,7 +10,7 @@ class Users extends Model
 	protected $primaryKey = 'id';
 
 	public static function get_all(){
-		return $this->all();
+		return Users::all();
 	}
   public static function getByEmail($email) {
     return Users::where('email',$email)->get();
@@ -27,11 +27,13 @@ class Users extends Model
   	$user->password_digest = $password;
   	$user->save();
   }
-
-  public static function set_cookie($email,$value){
+  
+  public static function set_cookie($email,$value,$id){
     $User = Users::where('email',$email)->first();
     $User->remember_digest = $value;
+    $User->timestamps = false;
     $User->save();
+    $User->timestamps = false;
   }
 
     public static function getByCookie($value){

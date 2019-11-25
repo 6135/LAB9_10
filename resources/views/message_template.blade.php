@@ -1,5 +1,5 @@
 
-<meta http-equiv="refresh" content="3; url={{action('Blog@index')}}">
+<meta http-equiv="refresh" content="3; url=./">
 @extends('layouts.app')
 
   @section('content')
