@@ -25,7 +25,7 @@ class StoreRegisterNew extends FormRequest
     {
         return [
             'Username' => 'required|max:32',
-            'Email' => 'required|unique:Users,email',
+            'Email' => 'required|unique:users,email',
             'Password' => 'required|max:32|min:6|confirmed',
             'Password_confirmation' => 'required',
         ];
