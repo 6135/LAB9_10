@@ -25,7 +25,7 @@ class Users extends Model
   	$user->save();
   }
   
-  public static function set_cookie($email,$value,$id){
+  public static function set_cookie($email,$value){
     $user = Users::where('email',$email)->first();
     $user->remember_digest = $value;
     $user->timestamps = false;
