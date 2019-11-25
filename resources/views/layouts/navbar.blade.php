@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand active" href="{{route('Blog@index')}}"><i class="fas fa-bars" style="color: white"></i>&nbsp;Home</a>
+      <a class="navbar-brand active" href="{{route('/post')}}"><i class="fas fa-bars" style="color: white"></i>&nbsp;Home</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       @if (isset($Menu1)) 
