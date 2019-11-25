@@ -16,6 +16,8 @@ class Post extends Controller
 	        $data = array(
 	            'Menu1' => 'Welcome '.$Name.'!',
 	            'href1' => '#',
+                'Menu2' => 'Blog',
+                'href2' => 'LAB9_10/post',
 	            'Verb' => "Write",
 	            'Post_id' => '',
 	            'Blog' => ''

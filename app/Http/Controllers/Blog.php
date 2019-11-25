@@ -20,8 +20,10 @@ class Blog extends Controller
             $data = array(
                 'Menu1' => 'Welcome '.$Name.'!',
                 'Menu2' => 'Logout',
+                'Menu3' => 'Blog',
                 'href1' => '#',
                 'href2' => 'logout',
+                'href3' => 'post',
                 'SubForum' => 'Main',
                 'Posts' => $Post,
                 'id' => session()->get('id'),
