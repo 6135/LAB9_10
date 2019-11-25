@@ -18,7 +18,7 @@ class Login extends Controller
         if(!(session()->has('id'))) {
 	    	$data = array(
 	    	'Menu1' => 'Register',
-	    	'href1' => 'register'
+	    	'href1' => action('Register@index')
 	    	);
 	        return view('login.login_template',$data);
 	    } else {

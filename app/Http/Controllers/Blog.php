@@ -22,7 +22,7 @@ class Blog extends Controller
                 'Menu2' => 'Logout',
                 'Menu3' => 'Blog',
                 'href1' => '#',
-                'href2' => 'logout',
+                'href2' => action('Login@logout'),
                 'href3' => action('Post@post',''),
                 'SubForum' => 'Main',
                 'Posts' => $Post,
@@ -34,8 +34,8 @@ class Blog extends Controller
     	$data = array(
     	    'Menu1' => 'Login',
     	    'Menu2' => 'Register',
-    	    'href1' => 'login',
-    	    'href2' => 'register',
+    	    'href1' => action('Login@index'),
+    	    'href2' => action('Register@index'),
     	    'SubForum' => 'Main',
     	    'Posts' => $Post
     	);

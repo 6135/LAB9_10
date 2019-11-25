@@ -11,7 +11,7 @@ class Register extends Controller
     public function index(){
         $data = array (
         'Menu1' => 'Login',
-        'href1' => 'login'
+        'href1' => action('Login@index')
         );
         if(Cookie::has('rememberMe') == 1) {
             $User = blog_model::get_user_cookie(Cookie::get('rememberMe'));
