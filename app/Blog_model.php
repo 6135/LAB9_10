@@ -11,7 +11,7 @@ class Blog_model
  		Users::register_new($username,$email,$password);
  	}
  	public static function get_user($email){
- 		//return Users::getByEmail($email);
+ 		return Users::getByEmail($email);
  	}
  	public static function get_posts() {
  		return Posts::orderBy('updated_at','desc')->get();

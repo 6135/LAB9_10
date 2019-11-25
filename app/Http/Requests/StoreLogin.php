@@ -24,7 +24,7 @@ class StoreLogin extends FormRequest
     public function rules()
     {
         return [
-            'Email' => 'required|exists:Users,email',
+            'Email' => 'required|exists:users,email',
             'Password' => 'required',
         ];
     }
