@@ -1,7 +1,8 @@
 
-<meta http-equiv="refresh" content="3; url={{action('Blog@index')}}">
 @extends('layouts.app')
-
+  @section('extra')
+  <meta http-equiv="refresh" content="3; url={{action('Blog@index')}}">
+  @endsection
   @section('content')
   <!-- Content -->
   <div class="container" style="max-width: 50%">
