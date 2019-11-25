@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-	protected $table = 'user';
+	protected $table = "user";
 	protected $primaryKey = 'id';
 
 	public static function get_all(){
