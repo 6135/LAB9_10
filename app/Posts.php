@@ -1,7 +1,5 @@
- <?php
-
+<?php
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Posts extends Model
@@ -37,3 +35,4 @@ class Posts extends Model
         return $this->belongsTo('App\Users','user_id','id'); //Matches micropost.user_id to users.id
     }
 }
+?>
