@@ -11,7 +11,7 @@ class Login extends Controller
     public function index()
     {
         if(Cookie::has('rememberMe') == 1) {
-            $User = blog_model::get_user_cookie(Cookie::get('rememberMe'));
+            //$User = blog_model::get_user_cookie(Cookie::get('rememberMe'));
             session(['Name' => $User->name]);
             session(['id' => $User->id]);         
         } 
@@ -48,7 +48,7 @@ class Login extends Controller
         );
         if($request->rememberMe==true) {
             $value = substr(md5(time()),0,32);
-            Blog_model::set_user_cookie($request->Email,$value);
+            //Blog_model::set_user_cookie($request->Email,$value);
             Cookie::queue('rememberMe',$value, ((3600 * 24 * 30)));
         }
         return view('/message_template',$data);
