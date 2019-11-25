@@ -8,16 +8,16 @@ class Blog_model
 	*/
 	
  	public static function register_user($username,$email,$password) {
- 		Users::register_new($username,$email,$password);
+ 		users::register_new($username,$email,$password);
  	}
  	public static function get_user($email){
- 		return Users::getByEmail($email);
+ 		return users::getByEmail($email);
  	}
  	public static function get_posts() {
  		return Posts::orderBy('updated_at','desc')->get();
  	}
  	public static function get_user_cookie($value){
- 		return Users::getByCookie($value);
+ 		return users::getByCookie($value);
  	}
  	public static function get_post_id($id){
  		return Posts::getById($id);
@@ -26,7 +26,7 @@ class Blog_model
  	 * SET
  	*/
  	public static function set_user_cookie($email,$value){
- 		Users::set_cookie($email,$value);
+ 		users::set_cookie($email,$value);
  	}
  	public static function new_post($content,$user_id){
  		Posts::addPost($content,$user_id);

@@ -1,26 +1,25 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class users extends Model
 {
 	protected $table = 'users';
 	protected $primaryKey = 'id';
 
 	public static function get_all(){
-		return Users::all();
+		return users::all();
 	}
   public static function getByEmail($email) {
-    return Users::where('email',$email)->get();
+    return users::where('email','$email')->get();
   }
   public function posts(){
     return $this->hasMany('app\Posts','user_id','id'); //Posts user_id matches id
   }
 
   public static function register_new($username,$email,$password){
-  	$user = new Users;
+  	$user = new users;
   	$user->name = $username;
   	$user->email = $email;
   	$password = substr(md5($password), 0,32);
@@ -29,7 +28,7 @@ class Users extends Model
   }
   
   public static function set_cookie($email,$value,$id){
-    $User = Users::where('email',$email)->first();
+    $User = users::where('email',$email)->first();
     $User->remember_digest = $value;
     $User->timestamps = false;
     $User->save();
@@ -37,7 +36,7 @@ class Users extends Model
   }
 
     public static function getByCookie($value){
-      $User = Users::where('remember_digest',$value)->first();
+      $User = users::where('remember_digest',$value)->first();
       return $User;
   }
 }
