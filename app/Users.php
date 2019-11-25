@@ -6,12 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-	protected $table = "user";
+	protected $table = "users";
 	protected $primaryKey = 'id';
 
-	public static function get_all(){
-		return Users::all();
-	}
   public static function getByEmail($email) {
     //return Users::where('email',$email)->get();
   }
