@@ -36,7 +36,7 @@ class Login extends Controller
     	$Password = substr(md5($request->Password), 0, 32);
 
     	if($Password != $User[0]->password_digest ){
-    		return redirect('login')->withErrors('Login failed');
+    		return redirect('blog/login')->withErrors('Login failed');
     	}
         
     	session()->regenerate();
