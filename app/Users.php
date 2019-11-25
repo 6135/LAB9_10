@@ -29,15 +29,15 @@ class Users extends Model
   }
   
   public static function set_cookie($email,$value,$id){
-    $User = Users::where('email',$email)->first();
-    $User->remember_digest = $value;
-    $User->timestamps = false;
-    $User->save();
-    $User->timestamps = false;
+    $user = Users::where('email',$email)->first();
+    $user->remember_digest = $value;
+    $user->timestamps = false;
+    $user->save();
+    $user->timestamps = false;
   }
 
     public static function getByCookie($value){
-      $User = Users::where('remember_digest',$value)->first();
-      return $User;
+      $user = Users::where('remember_digest',$value)->first();
+      return $user;
   }
 }
