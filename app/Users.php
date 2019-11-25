@@ -13,7 +13,7 @@ class Users extends Model
 		return Users::all();
 	}
   public static function getByEmail($email) {
-    return Users::where('email',$email)->get();
+    //return Users::where('email',$email)->get();
   }
   public function posts(){
     return $this->hasMany('app\Posts','user_id','id'); //Posts user_id matches id
